@@ -10,10 +10,11 @@ namespace Selenium.components
         // Member Variables --------------------------------------------------------------------------------------------
         
         public By matcher;
+        public IWebElement element;
 
         // Constructor -------------------------------------------------------------------------------------------------
 
-        BaseComponent(By matcher)
+        public BaseComponent(By matcher)
         {
             this.matcher = matcher;
         }
@@ -27,9 +28,10 @@ namespace Selenium.components
         
         // Utility Methods ---------------------------------------------------------------------------------------------
 
-        private void BuildElement()
+        public void WaitForElement()
         {
             WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(10));
+            element = wait.Until(e => e.FindElement(matcher));
         }
     }
 }

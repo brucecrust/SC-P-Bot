@@ -49,7 +49,10 @@
     <ItemGroup>
         <Compile Include="src\components\BaseComponent.cs" />
         <Compile Include="src\components\Button.cs" />
+        <Compile Include="src\components\Header.cs" />
         <Compile Include="src\components\Input.cs" />
+        <Compile Include="src\screens\BaseScreen.cs" />
+        <Compile Include="src\screens\Home.cs" />
         <Compile Include="src\utilities\Driver.cs" />
         <Compile Include="Tests.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,7 +63,6 @@
     </ItemGroup>
     <ItemGroup>
       <Folder Include="src\constants" />
-      <Folder Include="src\screens" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.98.0.4758.8000\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.98.0.4758.8000\build\Selenium.WebDriver.ChromeDriver.targets')" />

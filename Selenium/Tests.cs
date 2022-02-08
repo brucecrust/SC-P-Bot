@@ -3,6 +3,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using Selenium.screens;
 using Selenium.test;
 using Selenium.utilities;
 
@@ -16,13 +17,9 @@ namespace Selenium
         {
             Driver.driver.Navigate().GoToUrl("https://scp-wiki.wikidot.com/");
             
-            By matcher = By.Id("header");
-            IWebElement header = null;
-            WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(5));
-            
-            wait.Until(e => header = e.FindElement(matcher));
-
-            Assert.True(header.Displayed);
+            Home home = new Home();
+            home.WaitForDisplay();
+            home.VerifyHeader();
         }
     }
 }
